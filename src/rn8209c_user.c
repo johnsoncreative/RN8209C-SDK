@@ -546,7 +546,7 @@ void rn8209_user_init(void *mode)
 	uint8_t cmd_mode = *(uint8_t *)mode;
 	if(cmd_mode)
 	{
-		relay_open(); 
+		//relay_open(); 
 		cmd_uart_init();
 	}
 	while(1)
