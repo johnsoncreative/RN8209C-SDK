@@ -16,6 +16,10 @@
 #ifndef RN8209_U_H__
 #define RN8209_U_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "string.h"
 #include <stdio.h>
 #include <stdint.h>
@@ -158,25 +162,9 @@ void rn8209c_calibrate_power_k_phase_b(void);
 uint8_t rn8209c_read_energy(uint32_t *energy);
 extern  float  kp;
 
+#ifdef __cplusplus
+}
 #endif
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif
 

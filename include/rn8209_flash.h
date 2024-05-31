@@ -18,6 +18,10 @@
 #ifndef __RN8209_FLASH_H
 #define __RN8209_FLASH_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define HAVE_INIT       0X30
 #include "rn8209c_u.h"
 struct rn8209c_flash
@@ -27,6 +31,15 @@ struct rn8209c_flash
 }__attribute__((packed));
 
 extern struct rn8209c_flash stu8209c_flash;
+// Declare the external C++ functions (this is Keep Connect specific and wraps the ConfigManager for SPIFFS access)
+extern bool read_rn8209_param_struct(struct rn8209c_flash* data);
+extern bool write_rn8209_param_struct(const struct rn8209c_flash* data);
+
 void read_rn8209_param(void);
 void write_rn8209_param(void);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif

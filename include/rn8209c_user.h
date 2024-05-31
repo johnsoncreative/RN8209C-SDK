@@ -17,6 +17,10 @@
 #ifndef RN8209c_USER_INTERFACE_H____
 #define RN8209c_USER_INTERFACE_H____
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "stdio.h"
 #include "string.h"
 #include "rn8209c_u.h"
@@ -25,6 +29,7 @@
 #define  RN8209_TASK_PRIO		 7
 #define	 MAC					 "123456789012"
 #define  FIRMWARE_VERSION		"V1.0.1"
+#define  DEV_NAME				"KeepConnect"
 
 struct rn8209
 {
@@ -37,6 +42,11 @@ extern struct rn8209 rn8209_value;
 
 void set_user_param(STU_8209C param);
 void rn8209c_process_init(uint8_t cmd);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif
 
 
