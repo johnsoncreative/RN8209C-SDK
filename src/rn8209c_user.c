@@ -25,6 +25,7 @@ struct rn8209 rn8209_value;
 static char id[12+1];
 static char type[16+1];
 static char ver[16+1];
+uint32_t howOftenToReadPowerFromRN8209 = 10;
 void set_user_param(STU_8209C param)
 {
     stu8209c_user = param;
@@ -538,7 +539,7 @@ void rn8209_process(uint8_t cmd_mode)
 		case 3:
 			break;
 	}
-	s_delay_ms(10);
+	s_delay_ms(howOftenToReadPowerFromRN8209);
 }
 static uint8_t set_mode = 0;
 void rn8209_user_init(void *mode)
